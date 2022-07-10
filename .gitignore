@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/XenogearsPack/ePSXe205
+/XenogearsPack/Xenogears
+/XenogearsPack/XenogearsMedia

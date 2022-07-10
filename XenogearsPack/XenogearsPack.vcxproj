@@ -32,12 +32,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.3.1_msvc2019_64</QtInstall>
-    <QtModules>core;gui;widgets;multimedia;pdf;pdfwidgets</QtModules>
+    <QtModules>core;gui;widgets;multimedia;pdf;pdfwidgets;multimediawidgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.3.1_msvc2019_64</QtInstall>
-    <QtModules>core;gui;multimedia;widgets;pdf</QtModules>
+    <QtModules>core;gui;widgets;multimedia;pdf;pdfwidgets;multimediawidgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -88,10 +88,14 @@
     <QtRcc Include="XenogearsPack.qrc" />
     <QtUic Include="XenogearsPack.ui" />
     <QtMoc Include="XenogearsPack.h" />
+    <ClCompile Include="Videowidget.cpp" />
     <ClCompile Include="XenogearsPack.cpp" />
     <ClCompile Include="main.cpp" />
     <None Include="XenogearsPack.ico" />
     <ResourceCompile Include="XenogearsPack.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Videowidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
